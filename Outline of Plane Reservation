@@ -1,0 +1,98 @@
+#include <iostreaam>
+#include <fstream>
+#include <string>
+
+std::ofstream output;
+void select();
+void admin();
+void menu.admin();
+void menu();
+void reserve();
+void cancel();
+void passenger();
+void change();
+void receipt();
+
+
+int main(){
+	select();
+	
+}
+void select(){
+	int x;
+	std::cout << "Welcome to the Musketeer's Flight Reservation Interface! \n" 
+			  << "1. Admin \n" 
+			  << "2. Passenger \n";
+	std::cout << "Enter your choice: ";
+	std::cin >> x;
+	switch(x){
+		case 1:
+			admin();
+			break;
+		case 2:
+			menu();
+			break;
+	}
+}
+void admin(){
+	char x[50],y[50];
+	std::cout << "Enter Username: " 
+	std:cin >> x;
+	std::cout << "Enter Password: ";
+	std::cin >> y;
+	for(int i=3; i > 0; i--){
+		if ((x==USERNAME) && (y==PASSWORD)){
+			std::cout << "Welcome Sir Musketeer";
+			menu.admin();
+		}
+		else {
+			std::cout << "Username or Password is incorrect!! \n";
+			std::cout << "You have "<< i-1 << "tries left ";
+		}
+	}
+}
+void menu.admin(){
+	int x;
+	std::cout << "1. Flight Admission \n" 
+			  << "2. Flight Removal  \n" 
+			  << "3. Passenger checking \n" 
+			  << "4. Quit \n";
+	std::cout << "Enter your choice: ";
+	std::cin >> x;
+	
+}
+void menu(){
+	int x;
+	std::cout << "=============================================\n";
+	std::cout << "                     MENU                    \n";
+	std::cout << "=============================================\n";
+	std::cout << "1. Reserve Flight \n" 
+			  << "2. Cancel Flight  \n" 
+			  << "3. Passenger Verification \n" 
+			  << "4. Change Flight (Must Cancel Flight Fisrst) \n"
+			  << "5. Receipt \n" 
+			  << "6. Quit \n";
+	std::cout << "Enter your choice: ";
+	std::cin >> x;
+	switch(x){
+		case 1:
+			reserve();
+			break;
+		case 2:
+			cancel();
+			break;
+		case 3:
+			passenger();
+			break;
+		case 4:
+			change();
+			break;
+		case 5:
+			receipt();
+			break;
+		case 6:
+			std::cout << "Thank you for using our service!!!!";
+			exit(1);
+			
+	}
+}
